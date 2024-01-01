@@ -1,0 +1,31 @@
+import {
+  CurrentPrice,
+  DiscountRate,
+  ImageDiv,
+  NumberDiv,
+  OriginPrice,
+  ProductDesc,
+  ProductDiv,
+  ProductName,
+  ProductPrice,
+  ProductStore,
+} from 'components/ProductComponents/style'
+
+const ThirdProduct = () => {
+  return (
+    <ProductDiv>
+      <NumberDiv>03</NumberDiv>
+      <ImageDiv>사진</ImageDiv>
+      <ProductName>얼큰한 육개장 300g</ProductName>
+      <ProductDesc>직접 솥에서 볶아 더 얼큰하고 맛있는</ProductDesc>
+      <ProductPrice>
+        <CurrentPrice>3,000원</CurrentPrice>
+        <OriginPrice>3,150원</OriginPrice>
+        <DiscountRate>5%</DiscountRate>
+      </ProductPrice>
+      <ProductStore howToStore={'room'}>실온</ProductStore>
+    </ProductDiv>
+  )
+}
+
+export default ThirdProduct
