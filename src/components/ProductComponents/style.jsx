@@ -73,7 +73,7 @@ export const ProductStore = styled.div`
     } else if (props.howToStore === 'frozen') {
       return 'royalblue'
     } else {
-      return 'aqua'
+      return 'skyblue'
     }
   }};
 `
