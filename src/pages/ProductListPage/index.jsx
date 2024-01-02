@@ -38,7 +38,10 @@ const ProductListPage = () => {
       )
 
       if (existingIndex !== -1) {
-        updatedList[existingIndex].numbers += 1
+        updatedList[existingIndex] = {
+          ...updatedList[existingIndex],
+          numbers: updatedList[existingIndex].numbers + 1,
+        }
       } else {
         updatedList.push({
           ...product,
@@ -48,10 +51,6 @@ const ProductListPage = () => {
     }
     setAddedProducts(updatedList)
   }
-
-  useEffect(() => {
-    updateCartList()
-  }, [])
 
   return (
     <Wrapper>
