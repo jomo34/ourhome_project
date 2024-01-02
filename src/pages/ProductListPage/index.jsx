@@ -1,38 +1,57 @@
-import { Wrapper } from 'styles/style'
-import { Products } from 'pages/ProductListPage/styles'
+import { Wrapper, Products } from 'pages/ProductListPage/styles'
 import { Modal } from 'antd'
-import FirstProduct from 'components/ProductComponents/FirstProduct'
-import SecondProduct from 'components/ProductComponents/SecondProduct'
-import ThirdProduct from 'components/ProductComponents/ThirdProduct'
-import FourthProduct from 'components/ProductComponents/FourthProduct'
-import FifthProduct from 'components/ProductComponents/FifthProduct'
-import SixthProduct from 'components/ProductComponents/SixthProduct'
-import SeventhProduct from 'components/ProductComponents/SeventhProduct'
-import EighthProduct from 'components/ProductComponents/EighthProduct'
+import FirstProduct from 'components/FirstProduct'
+import SecondProduct from 'components/SecondProduct'
+import ThirdProduct from 'components/ThirdProduct'
+import FourthProduct from 'components/FourthProduct'
+import FifthProduct from 'components/FifthProduct'
+import SixthProduct from 'components/SixthProduct'
+import SeventhProduct from 'components/SeventhProduct'
+import EighthProduct from 'components/EighthProduct'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { modalState } from 'states/ModalState'
-import { productIds, selectedProductId } from 'states/ProductState'
-import { useState } from 'react'
+import { addedProductList, selectedProductId } from 'states/ProductState'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import productsList from 'pages/ProductListPage/ProductList.json'
+
 const ProductListPage = () => {
   const navigate = useNavigate()
   const [isMoveModalOpen, setIsMoveModalOpen] = useState(false)
   const [isAddModalOpen, setIsAddModalOpen] = useRecoilState(modalState)
-  const [products, setProducts] = useRecoilState(productIds)
+  const [addedProducts, setAddedProducts] = useRecoilState(addedProductList)
   const [productId] = useRecoilValue(selectedProductId)
 
   const handleAddOK = () => {
-    const productIds = [...products]
-    if (productIds.length) {
-      productIds.push(productId)
-      productIds.sort((a, b) => a - b)
-      setProducts(productIds)
-    } else {
-      setProducts([productId])
-    }
+    updateCartList()
     setIsAddModalOpen(false)
     setIsMoveModalOpen(true)
   }
+
+  const updateCartList = () => {
+    const updatedList = [...addedProducts]
+    const product = productsList.find((item) => item.id === Number(productId))
+
+    if (product) {
+      const existingIndex = updatedList.findIndex(
+        (item) => item.id === product.id
+      )
+
+      if (existingIndex !== -1) {
+        updatedList[existingIndex].numbers += 1
+      } else {
+        updatedList.push({
+          ...product,
+          numbers: 1,
+        })
+      }
+    }
+    setAddedProducts(updatedList)
+  }
+
+  useEffect(() => {
+    updateCartList()
+  }, [])
 
   return (
     <Wrapper>
