@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "진한 사골곰탕 300g",
+    "currentPrice": 1590,
+    "originPrice": 1750,
+    "numbers": 0
+  },
+  {
+    "id": 2,
+    "name": "아워홈 포차 꼬치어묵 (시원한맛)",
+    "currentPrice": 3900,
+    "originPrice": 5500,
+    "numbers": 0
+  },
+  {
+    "id": 3,
+    "name": "얼큰한 육개장 300g",
+    "currentPrice": 3000,
+    "originPrice": 3150,
+    "numbers": 0
+  },
+  {
+    "id": 4,
+    "name": "뼈없는 갈비탕 400g",
+    "currentPrice": 5940,
+    "originPrice": 6600,
+    "numbers": 0
+  },
+  {
+    "id": 5,
+    "name": "아워홈 치킨스테이크 오리지널 920g (4인분)",
+    "currentPrice": 17000,
+    "originPrice": 17900,
+    "numbers": 0
+  },
+  {
+    "id": 6,
+    "name": "아워홈 들기름김 전장 20g (4g X 5매)",
+    "currentPrice": 2280,
+    "originPrice": 2400,
+    "numbers": 0
+  },
+  {
+    "id": 7,
+    "name": "소고기장조림 200g",
+    "currentPrice": 3670,
+    "originPrice": 3670,
+    "numbers": 0
+  },
+  {
+    "id": 8,
+    "name": "매콤한 칠리 닭가슴살 110g (냉장)",
+    "currentPrice": 2790,
+    "originPrice": 2900,
+    "numbers": 0
+  }
+]
