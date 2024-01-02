@@ -10,10 +10,21 @@ import {
   ProductPrice,
   ProductStore,
 } from 'components/ProductComponents/style'
+import { useRecoilState } from 'recoil'
+import { modalState } from 'states/ModalState'
+import { selectedProductId } from 'states/ProductState'
 
 const EighthProduct = () => {
+  const [, setIsModalOpen] = useRecoilState(modalState)
+  const [, setSelectedProductId] = useRecoilState(selectedProductId)
+
   return (
-    <ProductDiv>
+    <ProductDiv
+      onClick={() => {
+        setSelectedProductId('8')
+        setIsModalOpen(true)
+      }}
+    >
       <NumberDiv>08</NumberDiv>
       <ImageDiv>사진</ImageDiv>
       <ProductName>매콤한 칠리 닭가슴살 110g (냉장)</ProductName>

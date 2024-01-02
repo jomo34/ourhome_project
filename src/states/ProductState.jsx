@@ -1,8 +1,8 @@
 import { atom } from 'recoil'
 
-export const productList = atom({
-  key: 'productList',
-  default: [{}],
+export const productIds = atom({
+  key: 'productIds',
+  default: [],
 })
 
 export const selectedProductId = atom({

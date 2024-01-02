@@ -11,10 +11,21 @@ import {
   ProductPrice,
   ProductStore,
 } from 'components/ProductComponents/style'
+import { useRecoilState } from 'recoil'
+import { modalState } from 'states/ModalState'
+import { selectedProductId } from 'states/ProductState'
 
 const FifthProduct = () => {
+  const [, setIsModalOpen] = useRecoilState(modalState)
+  const [, setSelectedProductId] = useRecoilState(selectedProductId)
+
   return (
-    <ProductDiv>
+    <ProductDiv
+      onClick={() => {
+        setSelectedProductId('5')
+        setIsModalOpen(true)
+      }}
+    >
       <NumberDiv>05</NumberDiv>
       <ImageDiv>사진</ImageDiv>
       <BestButton>베스트</BestButton>

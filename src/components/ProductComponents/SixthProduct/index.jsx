@@ -10,10 +10,21 @@ import {
   ProductPrice,
   ProductStore,
 } from 'components/ProductComponents/style'
+import { useRecoilState } from 'recoil'
+import { modalState } from 'states/ModalState'
+import { selectedProductId } from 'states/ProductState'
 
 const SixthProduct = () => {
+  const [, setIsModalOpen] = useRecoilState(modalState)
+  const [, setSelectedProductId] = useRecoilState(selectedProductId)
+
   return (
-    <ProductDiv>
+    <ProductDiv
+      onClick={() => {
+        setSelectedProductId('6')
+        setIsModalOpen(true)
+      }}
+    >
       <NumberDiv>06</NumberDiv>
       <ImageDiv>사진</ImageDiv>
       <ProductName>아워홈 들기름김 전장 20g (4g X 5매)</ProductName>

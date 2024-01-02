@@ -10,10 +10,21 @@ import {
   ProductPrice,
   ProductStore,
 } from 'components/ProductComponents/style'
+import { useRecoilState } from 'recoil'
+import { modalState } from 'states/ModalState'
+import { selectedProductId } from 'states/ProductState'
 
 const FourthProduct = () => {
+  const [, setIsModalOpen] = useRecoilState(modalState)
+  const [, setSelectedProductId] = useRecoilState(selectedProductId)
+
   return (
-    <ProductDiv>
+    <ProductDiv
+      onClick={() => {
+        setSelectedProductId('4')
+        setIsModalOpen(true)
+      }}
+    >
       <NumberDiv>04</NumberDiv>
       <ImageDiv>사진</ImageDiv>
       <ProductName>뼈없는 갈비탕 400g</ProductName>
