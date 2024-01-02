@@ -138,3 +138,13 @@ export const Flag = styled.div`
   color: gray;
   font-size: xx-large;
 `
+
+export const CartEmpty = styled.div`
+  background-color: whitesmoke;
+  font-size: xx-large;
+  width: 80%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
