@@ -9,34 +9,34 @@ import {
   ProductName,
   ProductPrice,
   ProductStore,
-} from 'components/ProductComponents/style'
+} from 'components/style'
 import { useRecoilState } from 'recoil'
 import { modalState } from 'states/ModalState'
 import { selectedProductId } from 'states/ProductState'
 
-const SecondProduct = () => {
+const EighthProduct = () => {
   const [, setIsModalOpen] = useRecoilState(modalState)
   const [, setSelectedProductId] = useRecoilState(selectedProductId)
 
   return (
     <ProductDiv
       onClick={() => {
-        setSelectedProductId('2')
+        setSelectedProductId('8')
         setIsModalOpen(true)
       }}
     >
-      <NumberDiv>02</NumberDiv>
+      <NumberDiv>08</NumberDiv>
       <ImageDiv>사진</ImageDiv>
-      <ProductName>아워홈 포차 꼬치어묵 (시원한맛)</ProductName>
-      <ProductDesc>국산 꽃게육수를 시원하게 담은 어묵탕</ProductDesc>
+      <ProductName>매콤한 칠리 닭가슴살 110g (냉장)</ProductName>
+      <ProductDesc>단백질 함량 27g, 매콤한 칠리맛</ProductDesc>
       <ProductPrice>
-        <CurrentPrice>3,900원</CurrentPrice>
-        <OriginPrice>5,500원</OriginPrice>
-        <DiscountRate>30%</DiscountRate>
+        <CurrentPrice>2,790원</CurrentPrice>
+        <OriginPrice>2,980원</OriginPrice>
+        <DiscountRate>6%</DiscountRate>
       </ProductPrice>
-      <ProductStore howToStore={'frozen'}>냉동</ProductStore>
+      <ProductStore howToStore={'refrigeration'}>냉장</ProductStore>
     </ProductDiv>
   )
 }
 
-export default SecondProduct
+export default EighthProduct

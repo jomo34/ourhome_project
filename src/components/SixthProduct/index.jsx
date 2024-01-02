@@ -9,29 +9,29 @@ import {
   ProductName,
   ProductPrice,
   ProductStore,
-} from 'components/ProductComponents/style'
+} from 'components/style'
 import { useRecoilState } from 'recoil'
 import { modalState } from 'states/ModalState'
 import { selectedProductId } from 'states/ProductState'
 
-const ThirdProduct = () => {
+const SixthProduct = () => {
   const [, setIsModalOpen] = useRecoilState(modalState)
   const [, setSelectedProductId] = useRecoilState(selectedProductId)
 
   return (
     <ProductDiv
       onClick={() => {
-        setSelectedProductId('3')
+        setSelectedProductId('6')
         setIsModalOpen(true)
       }}
     >
-      <NumberDiv>03</NumberDiv>
+      <NumberDiv>06</NumberDiv>
       <ImageDiv>사진</ImageDiv>
-      <ProductName>얼큰한 육개장 300g</ProductName>
-      <ProductDesc>직접 솥에서 볶아 더 얼큰하고 맛있는</ProductDesc>
+      <ProductName>아워홈 들기름김 전장 20g (4g X 5매)</ProductName>
+      <ProductDesc>전장김, 들기름, 반찬, 간식</ProductDesc>
       <ProductPrice>
-        <CurrentPrice>3,000원</CurrentPrice>
-        <OriginPrice>3,150원</OriginPrice>
+        <CurrentPrice>2,280원</CurrentPrice>
+        <OriginPrice>2,400원</OriginPrice>
         <DiscountRate>5%</DiscountRate>
       </ProductPrice>
       <ProductStore howToStore={'room'}>실온</ProductStore>
@@ -39,4 +39,4 @@ const ThirdProduct = () => {
   )
 }
 
-export default ThirdProduct
+export default SixthProduct

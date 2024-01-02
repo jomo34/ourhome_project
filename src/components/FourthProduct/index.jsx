@@ -1,38 +1,42 @@
 import {
   CurrentPrice,
+  DiscountRate,
   ImageDiv,
   NumberDiv,
+  OriginPrice,
   ProductDesc,
   ProductDiv,
   ProductName,
   ProductPrice,
   ProductStore,
-} from 'components/ProductComponents/style'
+} from 'components/style'
 import { useRecoilState } from 'recoil'
 import { modalState } from 'states/ModalState'
 import { selectedProductId } from 'states/ProductState'
 
-const SeventhProduct = () => {
+const FourthProduct = () => {
   const [, setIsModalOpen] = useRecoilState(modalState)
   const [, setSelectedProductId] = useRecoilState(selectedProductId)
 
   return (
     <ProductDiv
       onClick={() => {
-        setSelectedProductId('7')
+        setSelectedProductId('4')
         setIsModalOpen(true)
       }}
     >
-      <NumberDiv>07</NumberDiv>
+      <NumberDiv>04</NumberDiv>
       <ImageDiv>사진</ImageDiv>
-      <ProductName>소고기장조림 200g</ProductName>
-      <ProductDesc>장조림, 간편반찬, 꽈리고추, 곤약</ProductDesc>
+      <ProductName>뼈없는 갈비탕 400g</ProductName>
+      <ProductDesc>뼈를 발라내어 먹기 편한 뼈없는 갈비탕</ProductDesc>
       <ProductPrice>
-        <CurrentPrice>3,670원</CurrentPrice>
+        <CurrentPrice>5,940원</CurrentPrice>
+        <OriginPrice>6,600원</OriginPrice>
+        <DiscountRate>10%</DiscountRate>
       </ProductPrice>
-      <ProductStore howToStore={'refrigeration'}>냉장</ProductStore>
+      <ProductStore howToStore={'room'}>실온</ProductStore>
     </ProductDiv>
   )
 }
 
-export default SeventhProduct
+export default FourthProduct

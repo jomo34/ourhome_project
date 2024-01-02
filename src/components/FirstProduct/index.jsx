@@ -1,5 +1,4 @@
 import {
-  BestButton,
   CurrentPrice,
   DiscountRate,
   ImageDiv,
@@ -10,35 +9,34 @@ import {
   ProductName,
   ProductPrice,
   ProductStore,
-} from 'components/ProductComponents/style'
+} from 'components/style'
 import { useRecoilState } from 'recoil'
 import { modalState } from 'states/ModalState'
 import { selectedProductId } from 'states/ProductState'
 
-const FifthProduct = () => {
+const FirstProduct = () => {
   const [, setIsModalOpen] = useRecoilState(modalState)
   const [, setSelectedProductId] = useRecoilState(selectedProductId)
 
   return (
     <ProductDiv
       onClick={() => {
-        setSelectedProductId('5')
+        setSelectedProductId('1')
         setIsModalOpen(true)
       }}
     >
-      <NumberDiv>05</NumberDiv>
+      <NumberDiv>01</NumberDiv>
       <ImageDiv>사진</ImageDiv>
-      <BestButton>베스트</BestButton>
-      <ProductName>아워홈 치킨스테이크 오리지널 920g (4인분)</ProductName>
-      <ProductDesc>겉바속촉 통닭다리살 오븐구이 치킨스테이크</ProductDesc>
+      <ProductName>진한 사골곰탕 300g</ProductName>
+      <ProductDesc>100% 사골로 고은 진한 사골곰탕</ProductDesc>
       <ProductPrice>
-        <CurrentPrice>17,000원</CurrentPrice>
-        <OriginPrice>17,900원</OriginPrice>
-        <DiscountRate>5%</DiscountRate>
+        <CurrentPrice>1,590원</CurrentPrice>
+        <OriginPrice>1,750원</OriginPrice>
+        <DiscountRate>9%</DiscountRate>
       </ProductPrice>
-      <ProductStore howToStore={'frozen'}>냉동</ProductStore>
+      <ProductStore howToStore={'room'}>실온</ProductStore>
     </ProductDiv>
   )
 }
 
-export default FifthProduct
+export default FirstProduct

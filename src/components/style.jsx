@@ -15,7 +15,7 @@ export const NumberDiv = styled.div`
 export const ImageDiv = styled.div`
   height: 30vh;
   width: 230px;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
   margin: 1vh 0 1vh 0;
 `
 

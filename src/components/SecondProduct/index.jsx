@@ -9,34 +9,34 @@ import {
   ProductName,
   ProductPrice,
   ProductStore,
-} from 'components/ProductComponents/style'
+} from 'components/style'
 import { useRecoilState } from 'recoil'
 import { modalState } from 'states/ModalState'
 import { selectedProductId } from 'states/ProductState'
 
-const FirstProduct = () => {
+const SecondProduct = () => {
   const [, setIsModalOpen] = useRecoilState(modalState)
   const [, setSelectedProductId] = useRecoilState(selectedProductId)
 
   return (
     <ProductDiv
       onClick={() => {
-        setSelectedProductId('1')
+        setSelectedProductId('2')
         setIsModalOpen(true)
       }}
     >
-      <NumberDiv>01</NumberDiv>
+      <NumberDiv>02</NumberDiv>
       <ImageDiv>사진</ImageDiv>
-      <ProductName>진한 사골곰탕 300g</ProductName>
-      <ProductDesc>100% 사골로 고은 진한 사골곰탕</ProductDesc>
+      <ProductName>아워홈 포차 꼬치어묵 (시원한맛)</ProductName>
+      <ProductDesc>국산 꽃게육수를 시원하게 담은 어묵탕</ProductDesc>
       <ProductPrice>
-        <CurrentPrice>1,590원</CurrentPrice>
-        <OriginPrice>1,750원</OriginPrice>
-        <DiscountRate>9%</DiscountRate>
+        <CurrentPrice>3,900원</CurrentPrice>
+        <OriginPrice>5,500원</OriginPrice>
+        <DiscountRate>30%</DiscountRate>
       </ProductPrice>
-      <ProductStore howToStore={'room'}>실온</ProductStore>
+      <ProductStore howToStore={'frozen'}>냉동</ProductStore>
     </ProductDiv>
   )
 }
 
-export default FirstProduct
+export default SecondProduct

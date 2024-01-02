@@ -1,42 +1,38 @@
 import {
   CurrentPrice,
-  DiscountRate,
   ImageDiv,
   NumberDiv,
-  OriginPrice,
   ProductDesc,
   ProductDiv,
   ProductName,
   ProductPrice,
   ProductStore,
-} from 'components/ProductComponents/style'
+} from 'components/style'
 import { useRecoilState } from 'recoil'
 import { modalState } from 'states/ModalState'
 import { selectedProductId } from 'states/ProductState'
 
-const EighthProduct = () => {
+const SeventhProduct = () => {
   const [, setIsModalOpen] = useRecoilState(modalState)
   const [, setSelectedProductId] = useRecoilState(selectedProductId)
 
   return (
     <ProductDiv
       onClick={() => {
-        setSelectedProductId('8')
+        setSelectedProductId('7')
         setIsModalOpen(true)
       }}
     >
-      <NumberDiv>08</NumberDiv>
+      <NumberDiv>07</NumberDiv>
       <ImageDiv>사진</ImageDiv>
-      <ProductName>매콤한 칠리 닭가슴살 110g (냉장)</ProductName>
-      <ProductDesc>단백질 함량 27g, 매콤한 칠리맛</ProductDesc>
+      <ProductName>소고기장조림 200g</ProductName>
+      <ProductDesc>장조림, 간편반찬, 꽈리고추, 곤약</ProductDesc>
       <ProductPrice>
-        <CurrentPrice>2,790원</CurrentPrice>
-        <OriginPrice>2,980원</OriginPrice>
-        <DiscountRate>6%</DiscountRate>
+        <CurrentPrice>3,670원</CurrentPrice>
       </ProductPrice>
       <ProductStore howToStore={'refrigeration'}>냉장</ProductStore>
     </ProductDiv>
   )
 }
 
-export default EighthProduct
+export default SeventhProduct
