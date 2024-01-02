@@ -1,5 +1,5 @@
 import { Wrapper, Products } from 'pages/ProductListPage/styles'
-import { Modal } from 'antd'
+import { Button, Modal } from 'antd'
 import FirstProduct from 'components/FirstProduct'
 import SecondProduct from 'components/SecondProduct'
 import ThirdProduct from 'components/ThirdProduct'
@@ -11,7 +11,7 @@ import EighthProduct from 'components/EighthProduct'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { modalState } from 'states/ModalState'
 import { addedProductList, selectedProductId } from 'states/ProductState'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import productsList from 'pages/ProductListPage/ProductList.json'
 
@@ -53,40 +53,49 @@ const ProductListPage = () => {
   }
 
   return (
-    <Wrapper>
-      <Modal
-        title='상품 추가'
-        open={isAddModalOpen}
-        onOk={handleAddOK}
-        onCancel={() => {
-          setIsAddModalOpen(false)
-        }}
-      >
-        상품을 추가하시겠습니까?
-      </Modal>
-      <Modal
-        title='장바구니로 이동'
-        open={isMoveModalOpen}
-        onOk={() => {
+    <>
+      <Button
+        onClick={() => {
           navigate('/shopping-cart')
         }}
-        onCancel={() => {
-          setIsMoveModalOpen(false)
-        }}
       >
-        장바구니로 이동하시겠습니까?
-      </Modal>
-      <Products>
-        <FirstProduct />
-        <SecondProduct />
-        <ThirdProduct />
-        <FourthProduct />
-        <FifthProduct />
-        <SixthProduct />
-        <SeventhProduct />
-        <EighthProduct />
-      </Products>
-    </Wrapper>
+        장바구니로 이동하기
+      </Button>
+      <Wrapper>
+        <Modal
+          title='상품 추가'
+          open={isAddModalOpen}
+          onOk={handleAddOK}
+          onCancel={() => {
+            setIsAddModalOpen(false)
+          }}
+        >
+          상품을 추가하시겠습니까?
+        </Modal>
+        <Modal
+          title='장바구니로 이동'
+          open={isMoveModalOpen}
+          onOk={() => {
+            navigate('/shopping-cart')
+          }}
+          onCancel={() => {
+            setIsMoveModalOpen(false)
+          }}
+        >
+          장바구니로 이동하시겠습니까?
+        </Modal>
+        <Products>
+          <FirstProduct />
+          <SecondProduct />
+          <ThirdProduct />
+          <FourthProduct />
+          <FifthProduct />
+          <SixthProduct />
+          <SeventhProduct />
+          <EighthProduct />
+        </Products>
+      </Wrapper>
+    </>
   )
 }
 
