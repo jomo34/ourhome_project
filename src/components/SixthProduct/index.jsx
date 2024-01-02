@@ -1,6 +1,7 @@
 import {
   CurrentPrice,
   DiscountRate,
+  Image,
   ImageDiv,
   NumberDiv,
   OriginPrice,
@@ -13,6 +14,7 @@ import {
 import { useRecoilState } from 'recoil'
 import { modalState } from 'states/ModalState'
 import { selectedProductId } from 'states/ProductState'
+import image from 'images/06.jpeg'
 
 const SixthProduct = () => {
   const [, setIsModalOpen] = useRecoilState(modalState)
@@ -26,7 +28,9 @@ const SixthProduct = () => {
       }}
     >
       <NumberDiv>06</NumberDiv>
-      <ImageDiv>사진</ImageDiv>
+      <ImageDiv>
+        <Image src={image} />
+      </ImageDiv>
       <ProductName>아워홈 들기름김 전장 20g (4g X 5매)</ProductName>
       <ProductDesc>전장김, 들기름, 반찬, 간식</ProductDesc>
       <ProductPrice>

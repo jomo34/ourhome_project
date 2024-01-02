@@ -1,6 +1,7 @@
 import {
   CurrentPrice,
   DiscountRate,
+  Image,
   ImageDiv,
   NumberDiv,
   OriginPrice,
@@ -13,6 +14,7 @@ import {
 import { useRecoilState } from 'recoil'
 import { modalState } from 'states/ModalState'
 import { selectedProductId } from 'states/ProductState'
+import image from 'images/04.jpeg'
 
 const FourthProduct = () => {
   const [, setIsModalOpen] = useRecoilState(modalState)
@@ -26,7 +28,9 @@ const FourthProduct = () => {
       }}
     >
       <NumberDiv>04</NumberDiv>
-      <ImageDiv>사진</ImageDiv>
+      <ImageDiv>
+        <Image src={image} />
+      </ImageDiv>
       <ProductName>뼈없는 갈비탕 400g</ProductName>
       <ProductDesc>뼈를 발라내어 먹기 편한 뼈없는 갈비탕</ProductDesc>
       <ProductPrice>

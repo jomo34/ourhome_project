@@ -9,10 +9,12 @@ import {
   ProductName,
   ProductPrice,
   ProductStore,
+  Image,
 } from 'components/style'
 import { useRecoilState } from 'recoil'
 import { modalState } from 'states/ModalState'
 import { selectedProductId } from 'states/ProductState'
+import image from 'images/08.jpeg'
 
 const EighthProduct = () => {
   const [, setIsModalOpen] = useRecoilState(modalState)
@@ -26,7 +28,9 @@ const EighthProduct = () => {
       }}
     >
       <NumberDiv>08</NumberDiv>
-      <ImageDiv>사진</ImageDiv>
+      <ImageDiv>
+        <Image src={image} />
+      </ImageDiv>
       <ProductName>매콤한 칠리 닭가슴살 110g (냉장)</ProductName>
       <ProductDesc>단백질 함량 27g, 매콤한 칠리맛</ProductDesc>
       <ProductPrice>

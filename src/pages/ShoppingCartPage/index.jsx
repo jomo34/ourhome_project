@@ -23,6 +23,7 @@ import {
   TotalPrice,
   TotalPurchase,
   Wrapper,
+  Image,
 } from 'pages/ShoppingCartPage/styles'
 import InputNumber from 'components/InputNumber'
 import { useEffect, useState } from 'react'
@@ -64,7 +65,9 @@ const ShoppingCartPage = () => {
               {productCartList.map((product) => (
                 <EachProduct key={product.id}>
                   <ImageNName>
-                    <ProductImage>{product.id}</ProductImage>
+                    <ProductImage>
+                      <Image src={require(`images/0${product.id}.jpeg`)} />
+                    </ProductImage>
                     <p>{product.name}</p>
                   </ImageNName>
                   <Price>

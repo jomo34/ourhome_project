@@ -148,3 +148,8 @@ export const CartEmpty = styled.div`
   justify-content: center;
   align-items: center;
 `
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`
