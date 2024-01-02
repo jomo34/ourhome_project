@@ -54,12 +54,18 @@ const ShoppingCartPage = () => {
               <p>{product.name}</p>
             </ImageNName>
             <Price>
-              <BoldString>
-                {product.currentPrice.toLocaleString('ko-KR')}원
-              </BoldString>
-              <LineThroughString>
-                {product.originPrice.toLocaleString('ko-KR')}원
-              </LineThroughString>
+              {product.currentPrice === product.originPrice ? (
+                <BoldString>
+                  {product.currentPrice.toLocaleString('ko-KR')}원
+                </BoldString>
+              ) : (
+                <BoldString>
+                  {product.currentPrice.toLocaleString('ko-KR')}원
+                  <LineThroughString>
+                    {product.originPrice.toLocaleString('ko-KR')}원
+                  </LineThroughString>
+                </BoldString>
+              )}
             </Price>
             <InputNumber data={product}></InputNumber>
             <CurrentPriceMultiNumbers>
