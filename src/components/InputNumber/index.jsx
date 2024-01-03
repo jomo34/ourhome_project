@@ -6,7 +6,7 @@ import { addedProductList } from 'states/ProductState'
 
 const InputNumber = (product) => {
   const [counter, setCount] = useState(product.data.numbers)
-  const [addedList, setAddedList] = useRecoilState(addedProductList)
+  const [, setAddedList] = useRecoilState(addedProductList)
 
   const handleChange = (event) => {
     const inputValue = event.target.value
@@ -33,9 +33,16 @@ const InputNumber = (product) => {
 
   return (
     <NumberButton>
-      <button onClick={() => counter > 0 && setCount(counter - 1)}>-</button>
+      <button
+        aria-label='수량 -'
+        onClick={() => counter > 0 && setCount(counter - 1)}
+      >
+        -
+      </button>
       <Input type='text' value={counter} onChange={handleChange}></Input>
-      <button onClick={() => setCount(counter + 1)}>+</button>
+      <button aria-label='수량 +' onClick={() => setCount(counter + 1)}>
+        +
+      </button>
     </NumberButton>
   )
 }

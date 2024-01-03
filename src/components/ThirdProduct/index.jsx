@@ -5,8 +5,8 @@ import {
   ImageDiv,
   NumberDiv,
   OriginPrice,
+  ProductButton,
   ProductDesc,
-  ProductDiv,
   ProductName,
   ProductPrice,
   ProductStore,
@@ -21,7 +21,8 @@ const ThirdProduct = () => {
   const [, setSelectedProductId] = useRecoilState(selectedProductId)
 
   return (
-    <ProductDiv
+    <ProductButton
+      aria-label='3번째 상품'
       onClick={() => {
         setSelectedProductId('3')
         setIsModalOpen(true)
@@ -39,7 +40,7 @@ const ThirdProduct = () => {
         <DiscountRate>5%</DiscountRate>
       </ProductPrice>
       <ProductStore howToStore={'room'}>실온</ProductStore>
-    </ProductDiv>
+    </ProductButton>
   )
 }
 

@@ -52,7 +52,7 @@ const ShoppingCartPage = () => {
       >
         뒤로가기
       </Button>
-      <Wrapper>
+      <Wrapper aria-label='장바구니'>
         {productCartList.length ? (
           <>
             <Index>
@@ -85,7 +85,7 @@ const ShoppingCartPage = () => {
                     )}
                   </Price>
                   <InputNumber data={product}></InputNumber>
-                  <CurrentPriceMultiNumbers>
+                  <CurrentPriceMultiNumbers aria-label='물건의 총 금액'>
                     {(product.currentPrice * product.numbers).toLocaleString(
                       'ko-KR'
                     )}
@@ -102,7 +102,7 @@ const ShoppingCartPage = () => {
               <Flag>+</Flag>
               <DeliveryTip>
                 <div>배송비</div>
-                <BoldPrice>
+                <BoldPrice aria-label='배송비'>
                   {(totalAmount >= 30000 ? 0 : 3000).toLocaleString('ko-KR')}원
                 </BoldPrice>
                 <GrayString>(3만원이상 구매 시 무료배송)</GrayString>
@@ -110,17 +110,19 @@ const ShoppingCartPage = () => {
               <Flag>=</Flag>
               <TotalPurchase>
                 <div>결제 금액</div>
-                <BoldPrice>
+                <BoldPrice aria-label='주문의 총 결제 금액'>
                   {totalAmount >= 30000
                     ? totalAmount.toLocaleString('ko-KR')
-                    : (totalAmount + 3000).toLocaleString('ko-KR')}{' '}
+                    : (totalAmount + 3000).toLocaleString('ko-KR')}
                   원
                 </BoldPrice>
               </TotalPurchase>
             </PurchaseIndex>
           </>
         ) : (
-          <CartEmpty>장바구니가 비어 있습니다.</CartEmpty>
+          <CartEmpty aria-label='빈 장바구니'>
+            장바구니가 비어 있습니다.
+          </CartEmpty>
         )}
       </Wrapper>
     </>

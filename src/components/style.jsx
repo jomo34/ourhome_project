@@ -1,10 +1,12 @@
 import styled from '@emotion/styled'
 
-export const ProductDiv = styled.div`
+export const ProductButton = styled.button`
   display: flex;
   flex-direction: column;
   margin: 1vh 3vw;
   width: calc(20% - 3vw);
+  background-color: white;
+  border: 0px;
 `
 
 export const NumberDiv = styled.div`

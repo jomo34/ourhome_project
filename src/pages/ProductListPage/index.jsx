@@ -55,6 +55,7 @@ const ProductListPage = () => {
   return (
     <>
       <Button
+        aria-label='장바구니로 이동'
         onClick={() => {
           navigate('/shopping-cart')
         }}
@@ -63,6 +64,7 @@ const ProductListPage = () => {
       </Button>
       <Wrapper>
         <Modal
+          aria-label='상품 추가'
           title='상품 추가'
           open={isAddModalOpen}
           onOk={handleAddOK}
@@ -73,6 +75,7 @@ const ProductListPage = () => {
           상품을 추가하시겠습니까?
         </Modal>
         <Modal
+          aria-label='장바구니로 이동'
           title='장바구니로 이동'
           open={isMoveModalOpen}
           onOk={() => {
